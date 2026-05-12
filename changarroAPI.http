@@ -1,0 +1,6 @@
+@changarroAPI_HostAddress = http://localhost:5253
+
+GET {{changarroAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
