@@ -1,49 +1,37 @@
 using Dtos;
-using Models;
+using changarroAPI.Models;
 using MongoDB.Driver;
-using Services;
+using changarroAPI.Repository;
 
 namespace changarroAPI.Services // TODA LA LOGICA DE NEGOCIOS
 {
     public class ProductoService : IProductoService
     {
-        IMongoClient _client;
-        public ProductoService(IMongoClient client)
+        private readonly IProductRepository _productRepository;
+        public ProductoService(IProductRepository productRepository)
         {
-            _client = client;
+            _productRepository = productRepository;
         }
     
-    public async Task<ProductResponseDto?> GetProductById(string id, CancellationToken cancellationToken)
-    {
-        var database = _client.GetDatabase("chagarro");
-        var collection = database.GetCollection<Models.Producto>("productos");
-        var filter = Builders<Models.Producto>.Filter.Eq(p => p.Id, id);
-        var producto = await collection.Find(filter).FirstOrDefaultAsync(cancellationToken);
-        if (producto == null)
-            return null;
-        
-        return new ProductResponseDto
+        public async Task<List<ProductResponseDto>> GetAllProducts(CancellationToken cancellationToken)
         {
-            Id = producto.Id,
-            Title = producto.Title,
-            Type = producto.Type,
-            Category = producto.Category,
-            Price = producto.Price,
-            Stock = producto.Stock
-        };
+            var productos = await _productRepository.GetAllProductsAsync(cancellationToken);
+            return productos.Select(p => Mappers.ProductoMapper.ToProductResponseDto(p)).ToList();
+        }
 
-    }
-
-    public async Task<CreateProductResponseDto> CreateProduct(Producto producto, CancellationToken cancellationToken)
-    {
-        var database = _client.GetDatabase("chagarro");
-        var collection = database.GetCollection<Models.Producto>("productos");
-        await collection.InsertOneAsync(producto, cancellationToken: cancellationToken);
-        return new CreateProductResponseDto
+        public async Task<ProductResponseDto?> GetProductById(string id, CancellationToken cancellationToken)
         {
-            Id = producto.Id,
-            Title = producto.Title,
-        };
+            var producto = await _productRepository.GetProductByIdAsync(id, cancellationToken);
+            if (producto == null)
+                return null;
+
+            return Mappers.ProductoMapper.ToProductResponseDto(producto);
+        }
+
+        public async Task<CreateProductResponseDto> CreateProduct(Producto producto, CancellationToken cancellationToken)
+        {
+            var created = await _productRepository.CreateProductAsync(producto, cancellationToken);
+            return Mappers.ProductoMapper.ToCreateProductResponseDto(created);
+        }
     }
-}
 }

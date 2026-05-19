@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("changarroAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2da6da99de66da40c8357ba31ae4aeaadfca5162")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dfac17ae0dabd5807ea20e81f6f8b1fe739a71f")]
 [assembly: System.Reflection.AssemblyProductAttribute("changarroAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("changarroAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

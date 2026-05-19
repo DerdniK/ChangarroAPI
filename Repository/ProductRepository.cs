@@ -1,24 +1,35 @@
 using Dtos;
-using Models;
+using changarroAPI.Models;
 using MongoDB.Driver;
-using Services;
 
-namespace Repository // El encargado de ir a la base de datos, traer la info y devolverla a los servicios
+namespace changarroAPI.Repository // El encargado de ir a la base de datos, traer la info y devolverla a los servicios
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
-        private readonly IProductoService _productoService;
-        private readonly IMongoClient _client;
-
-        public ProductRepository(IProductoService productoService, IMongoClient client)
+        private readonly IMongoCollection<Producto> _collection;
+        public ProductRepository(IMongoClient client)
         {
-            _productoService = productoService;
-            _client = client;
+            var database = client.GetDatabase("ChangarroDB");
+            _collection = database.GetCollection<Producto>("Productos");
         }
 
-        public async Task<ProductResponseDto?> GetProductByIdAsync(string id, CancellationToken cancellationToken)
+        public async Task<List<Producto>> GetAllProductsAsync(CancellationToken cancellationToken)
         {
-            return await _productoService.GetProductById(id, cancellationToken);
+            return await _collection.Find(_ => true)
+                                    .ToListAsync(cancellationToken);
+        }
+
+        public async Task<Producto> GetProductByIdAsync(string id, CancellationToken cancellationToken)
+        {
+            // Filtramos en Mongo por el campo Id
+            return await _collection.Find(p => p.Id == id)
+                                    .FirstOrDefaultAsync(cancellationToken);
+        }
+
+        public async Task<Producto> CreateProductAsync(Producto producto, CancellationToken cancellationToken)
+        {
+            await _collection.InsertOneAsync(producto, cancellationToken: cancellationToken);
+            return producto;
         }
     }
 }

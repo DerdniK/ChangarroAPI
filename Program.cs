@@ -1,7 +1,7 @@
 using changarroAPI.Services;
 using MongoDB.Driver;
+using changarroAPI.Repository;
 using Scalar.AspNetCore;
-using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +18,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IProductoService, ProductoService>();
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
