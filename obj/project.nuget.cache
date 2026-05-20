@@ -1,9 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "hFpwC+8XgrY=",
+  "dgSpecHash": "rNACskx3IoY=",
   "success": true,
   "projectFilePath": "C:\\Users\\adolt\\OneDrive\\Escritorio\\ChangarroAPI\\changarroAPI\\changarroAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.apigatewayevents\\3.0.0\\amazon.lambda.apigatewayevents.3.0.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.applicationloadbalancerevents\\3.0.0\\amazon.lambda.applicationloadbalancerevents.3.0.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.aspnetcoreserver\\10.1.1\\amazon.lambda.aspnetcoreserver.10.1.1.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.aspnetcoreserver.hosting\\2.1.0\\amazon.lambda.aspnetcoreserver.hosting.2.1.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.core\\3.1.0\\amazon.lambda.core.3.1.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.logging.aspnetcore\\5.0.0\\amazon.lambda.logging.aspnetcore.5.0.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.runtimesupport\\2.1.0\\amazon.lambda.runtimesupport.2.1.0.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\3.0.0\\amazon.lambda.serialization.systemtextjson.3.0.0.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.7\\microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
@@ -12,6 +20,7 @@
     "C:\\Users\\adolt\\.nuget\\packages\\scalar.aspnetcore\\2.14.11\\scalar.aspnetcore.2.14.11.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\snappier\\1.3.1\\snappier.1.3.1.nupkg.sha512",
+    "C:\\Users\\adolt\\.nuget\\packages\\snapshotrestore.registry\\1.0.2\\snapshotrestore.registry.1.0.2.nupkg.sha512",
     "C:\\Users\\adolt\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
   ],
   "logs": [
