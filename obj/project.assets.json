@@ -2,6 +2,136 @@
   "version": 3,
   "targets": {
     "net10.0": {
+      "Amazon.Lambda.APIGatewayEvents/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.APIGatewayEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.APIGatewayEvents.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.ApplicationLoadBalancerEvents/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer/10.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "3.0.0",
+          "Amazon.Lambda.ApplicationLoadBalancerEvents": "3.0.0",
+          "Amazon.Lambda.Core": "3.1.0",
+          "Amazon.Lambda.Logging.AspNetCore": "5.0.0",
+          "Amazon.Lambda.Serialization.SystemTextJson": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Amazon.Lambda.AspNetCoreServer.Hosting/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "3.0.0",
+          "Amazon.Lambda.AspNetCoreServer": "10.1.1",
+          "Amazon.Lambda.Core": "3.1.0",
+          "Amazon.Lambda.RuntimeSupport": "2.1.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Core/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Logging.AspNetCore/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.RuntimeSupport/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.1.0",
+          "SnapshotRestore.Registry": "1.0.2"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.RuntimeSupport.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.RuntimeSupport.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Serialization.SystemTextJson/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "DnsClient/1.6.1": {
         "type": "package",
         "compile": {
@@ -121,6 +251,19 @@
           }
         }
       },
+      "SnapshotRestore.Registry/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/SnapshotRestore.Registry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/SnapshotRestore.Registry.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "ZstdSharp.Port/0.7.3": {
         "type": "package",
         "compile": {
@@ -133,6 +276,136 @@
     }
   },
   "libraries": {
+    "Amazon.Lambda.APIGatewayEvents/3.0.0": {
+      "sha512": "1JxlUCqIps7p9FLRfFrgaLCVqgg2J39ZOmZDmV/R1LMwb2eT4/glaKwhxC3r01HeDsozk1jUe1KYRGgzxJaVXg==",
+      "type": "package",
+      "path": "amazon.lambda.apigatewayevents/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.apigatewayevents.3.0.0.nupkg.sha512",
+        "amazon.lambda.apigatewayevents.nuspec",
+        "lib/net10.0/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/net10.0/Amazon.Lambda.APIGatewayEvents.xml",
+        "lib/net8.0/Amazon.Lambda.APIGatewayEvents.dll",
+        "lib/net8.0/Amazon.Lambda.APIGatewayEvents.xml"
+      ]
+    },
+    "Amazon.Lambda.ApplicationLoadBalancerEvents/3.0.0": {
+      "sha512": "lUiZhNxherASNgbZysdFEj37VlyO7BH2z4iOwFpRtfLGq/v/dkVqt3rBAVvrxfPBRGi6SbSb/bHTV4bhPo5tSg==",
+      "type": "package",
+      "path": "amazon.lambda.applicationloadbalancerevents/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.lambda.applicationloadbalancerevents.3.0.0.nupkg.sha512",
+        "amazon.lambda.applicationloadbalancerevents.nuspec",
+        "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll",
+        "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.xml",
+        "lib/net8.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll",
+        "lib/net8.0/Amazon.Lambda.ApplicationLoadBalancerEvents.xml"
+      ]
+    },
+    "Amazon.Lambda.AspNetCoreServer/10.1.1": {
+      "sha512": "xCcqrIhN9rVHF7A5MaPNu+mUuUDJX/ywE7joz6Adz/cr0jsX2Vk5PsxWyqFz/pGT42rINYmXJ9LwS/PCE5OSIQ==",
+      "type": "package",
+      "path": "amazon.lambda.aspnetcoreserver/10.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.aspnetcoreserver.10.1.1.nupkg.sha512",
+        "amazon.lambda.aspnetcoreserver.nuspec",
+        "lib/net10.0/Amazon.Lambda.AspNetCoreServer.dll",
+        "lib/net10.0/Amazon.Lambda.AspNetCoreServer.xml",
+        "lib/net8.0/Amazon.Lambda.AspNetCoreServer.dll",
+        "lib/net8.0/Amazon.Lambda.AspNetCoreServer.xml"
+      ]
+    },
+    "Amazon.Lambda.AspNetCoreServer.Hosting/2.1.0": {
+      "sha512": "zYy6Dzs74OAZywP+y4Lx60aWYVPyNooAKWx3sqGpZ4jTnLevKlWKvsYBGGKgLQs62F8ppRQc8mvZoKGeN3eZEA==",
+      "type": "package",
+      "path": "amazon.lambda.aspnetcoreserver.hosting/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.aspnetcoreserver.hosting.2.1.0.nupkg.sha512",
+        "amazon.lambda.aspnetcoreserver.hosting.nuspec",
+        "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll",
+        "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.xml",
+        "lib/net8.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll",
+        "lib/net8.0/Amazon.Lambda.AspNetCoreServer.Hosting.xml"
+      ]
+    },
+    "Amazon.Lambda.Core/3.1.0": {
+      "sha512": "uZZ2k5lMoB9OzPTmKkkEKpyFcnLxcb7FxtxrA3+HBg/sooTzu402iCcSk5r+N62Qokhwr4Q9cbaVJSM6Dln3aA==",
+      "type": "package",
+      "path": "amazon.lambda.core/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.core.3.1.0.nupkg.sha512",
+        "amazon.lambda.core.nuspec",
+        "lib/net10.0/Amazon.Lambda.Core.dll",
+        "lib/net10.0/Amazon.Lambda.Core.xml",
+        "lib/net8.0/Amazon.Lambda.Core.dll",
+        "lib/net8.0/Amazon.Lambda.Core.xml",
+        "lib/netstandard2.0/Amazon.Lambda.Core.dll",
+        "lib/netstandard2.0/Amazon.Lambda.Core.xml"
+      ]
+    },
+    "Amazon.Lambda.Logging.AspNetCore/5.0.0": {
+      "sha512": "vfqHBHPvsIvaAGeBnFSRSCThHoqXWqy7S/R6/Aldn4/FmHEp872D0WcJgFac/D0h0GnbHqyfFkjmBEpi85vOog==",
+      "type": "package",
+      "path": "amazon.lambda.logging.aspnetcore/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.lambda.logging.aspnetcore.5.0.0.nupkg.sha512",
+        "amazon.lambda.logging.aspnetcore.nuspec",
+        "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.dll",
+        "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.xml",
+        "lib/net8.0/Amazon.Lambda.Logging.AspNetCore.dll",
+        "lib/net8.0/Amazon.Lambda.Logging.AspNetCore.xml"
+      ]
+    },
+    "Amazon.Lambda.RuntimeSupport/2.1.0": {
+      "sha512": "eu/0mFfSlI3Bi9v2ze1EDE2HU9GsaQ08gDcDeYrTMm8MJBkCbUOXiJeWrh6rVyZquUK3dniEDQM7pvBSOakmoQ==",
+      "type": "package",
+      "path": "amazon.lambda.runtimesupport/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.runtimesupport.2.1.0.nupkg.sha512",
+        "amazon.lambda.runtimesupport.nuspec",
+        "lib/net10.0/Amazon.Lambda.RuntimeSupport.dll",
+        "lib/net10.0/Amazon.Lambda.RuntimeSupport.xml",
+        "lib/net8.0/Amazon.Lambda.RuntimeSupport.dll",
+        "lib/net8.0/Amazon.Lambda.RuntimeSupport.xml",
+        "lib/net9.0/Amazon.Lambda.RuntimeSupport.dll",
+        "lib/net9.0/Amazon.Lambda.RuntimeSupport.xml"
+      ]
+    },
+    "Amazon.Lambda.Serialization.SystemTextJson/3.0.0": {
+      "sha512": "8lKS2w8Ww+Kq41mRmedL3lYLVr+UE0tzN2FwOigxKe+hzDbWJIMXZwVHwf53RsdFsYZlaTmW4WHE56W/1Fk3Hg==",
+      "type": "package",
+      "path": "amazon.lambda.serialization.systemtextjson/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "amazon.lambda.serialization.systemtextjson.3.0.0.nupkg.sha512",
+        "amazon.lambda.serialization.systemtextjson.nuspec",
+        "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.dll",
+        "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.xml",
+        "lib/net8.0/Amazon.Lambda.Serialization.SystemTextJson.dll",
+        "lib/net8.0/Amazon.Lambda.Serialization.SystemTextJson.xml"
+      ]
+    },
     "DnsClient/1.6.1": {
       "sha512": "4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
       "type": "package",
@@ -285,6 +558,24 @@
         "snappier.nuspec"
       ]
     },
+    "SnapshotRestore.Registry/1.0.2": {
+      "sha512": "clcAZGAb8sbtIuynOPiZkpHLdSb3RGxHJjSPyecgRh55fFY0KynqA7GEtrVL/sAUgO9jvC0IMhPXBRcJuFWrAA==",
+      "type": "package",
+      "path": "snapshotrestore.registry/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/SnapshotRestore.Registry.dll",
+        "lib/net10.0/SnapshotRestore.Registry.xml",
+        "lib/net8.0/SnapshotRestore.Registry.dll",
+        "lib/net8.0/SnapshotRestore.Registry.xml",
+        "lib/net9.0/SnapshotRestore.Registry.dll",
+        "lib/net9.0/SnapshotRestore.Registry.xml",
+        "snapshotrestore.registry.1.0.2.nupkg.sha512",
+        "snapshotrestore.registry.nuspec"
+      ]
+    },
     "ZstdSharp.Port/0.7.3": {
       "sha512": "U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
       "type": "package",
@@ -306,6 +597,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Amazon.Lambda.AspNetCoreServer.Hosting >= 2.1.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.7",
       "MongoDB.Driver >= 3.8.1",
       "Scalar.AspNetCore >= 2.14.11"
@@ -354,6 +646,10 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
+          "Amazon.Lambda.AspNetCoreServer.Hosting": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.7, )"
