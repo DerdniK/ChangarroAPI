@@ -10,5 +10,6 @@ namespace changarroAPI.Services
         Task<CreateProductResponseDto> CreateProduct(Producto producto, CancellationToken cancellationToken);
         // Task<ProductResponseDto> UpdateProduct(string id, Producto producto, CancellationToken cancellationToken);
         // Task<DeleteProductoDto> DeleteProduct(string id, CancellationToken cancellationToken);
+        Task UpdateProduct(string id, Producto producto, CancellationToken cancellationToken);
     }
 }

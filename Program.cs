@@ -1,15 +1,27 @@
 using changarroAPI.Services;
-using MongoDB.Driver;
+using Amazon.DynamoDBv2;
+using Amazon.DynamoDBv2.DataModel;
 using changarroAPI.Repository;
 using Scalar.AspNetCore;
+using Amazon;
+using changarroAPI.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton<IMongoClient>(sp => 
+builder.Services.AddSingleton<IAmazonDynamoDB>(sp => 
 {
-    // Usa tu cadena de conexión (la que sacas de Compass o Atlas)
-    var connectionString = "mongodb+srv://admin:MuT8FgY7rj4pmoi2@changarrocluster.w9pecj0.mongodb.net/"; 
-    return new MongoClient(connectionString);
+    // Configurar cliente DynamoDB con credenciales de AWS
+    return new AmazonDynamoDBClient(RegionEndpoint.USEast1);
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirTodo", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
 });
 
 // Add services to the container.
@@ -20,10 +32,10 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
 
 builder.Services.AddScoped<IProductoService, ProductoService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 var app = builder.Build();
-
-app.MapControllers();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -31,6 +43,9 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
+
+app.UseCors("PermitirTodo");
+app.MapControllers();
 
 // app.UseHttpsRedirection();
 

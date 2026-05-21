@@ -3,6 +3,7 @@ namespace Dtos
     public class ProductResponseDto
     {
         public string? Id { get; set; } // "HG1267BHJF0KL"
+        public string? ImageUrl { get; set; } // "https://example.com/product-image.jpg"
         public string? Title { get; set; } // "Black clover"
         public string? Type { get; set; } // "Pin", "Sticker", "Póster"
         public string? Category { get; set; } // "Anime", "Videojuegos", "Peliculas"

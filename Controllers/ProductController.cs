@@ -36,5 +36,12 @@ namespace changarroAPI.Controllers
             var createdProduct = await _productoService.CreateProduct(producto, cancellationToken);
             return CreatedAtRoute("GetProductById", new { id = createdProduct.Id }, createdProduct);
         }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateProduct(string id, [FromBody] Producto producto, CancellationToken cancellationToken)
+        {
+            await _productoService.UpdateProduct(id, producto, cancellationToken);
+            return NoContent();
+        }
     }
 }

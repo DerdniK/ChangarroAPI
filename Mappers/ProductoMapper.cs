@@ -10,6 +10,7 @@ namespace changarroAPI.Mappers
             return new ProductResponseDto
             {
                 Id = producto.Id,
+                ImageUrl = producto.ImageUrl,
                 Title = producto.Title,
                 Type = producto.Type,
                 Category = producto.Category,
@@ -23,6 +24,7 @@ namespace changarroAPI.Mappers
             return new CreateProductResponseDto
             {
                 Id = producto.Id,
+                ImageUrl = producto.ImageUrl,
                 Title = producto.Title,
             };
         }

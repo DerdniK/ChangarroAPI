@@ -132,15 +132,31 @@
           }
         }
       },
-      "DnsClient/1.6.1": {
+      "AWSSDK.Core/4.0.7.1": {
         "type": "package",
         "compile": {
-          "lib/net5.0/DnsClient.dll": {
+          "lib/net8.0/AWSSDK.Core.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net5.0/DnsClient.dll": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AWSSDK.DynamoDBv2/4.0.18.4": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.7.1, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.DynamoDBv2.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.DynamoDBv2.dll": {
             "related": ".xml"
           }
         }
@@ -180,36 +196,228 @@
           }
         }
       },
-      "MongoDB.Bson/3.8.1": {
+      "Scalar.AspNetCore/2.14.11": {
         "type": "package",
         "compile": {
-          "lib/net6.0/MongoDB.Bson.dll": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/MongoDB.Bson.dll": {
+          "lib/net10.0/Scalar.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "SnapshotRestore.Registry/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/SnapshotRestore.Registry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/SnapshotRestore.Registry.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net10.0/linux-x64": {
+      "Amazon.Lambda.APIGatewayEvents/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.APIGatewayEvents.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.APIGatewayEvents.dll": {
             "related": ".xml"
           }
         }
       },
-      "MongoDB.Driver/3.8.1": {
+      "Amazon.Lambda.ApplicationLoadBalancerEvents/3.0.0": {
         "type": "package",
-        "dependencies": {
-          "DnsClient": "1.6.1",
-          "MongoDB.Bson": "3.8.1",
-          "SharpCompress": "0.30.1",
-          "Snappier": "1.3.1",
-          "ZstdSharp.Port": "0.7.3"
-        },
         "compile": {
-          "lib/net6.0/MongoDB.Driver.dll": {
+          "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net6.0/MongoDB.Driver.dll": {
+          "lib/net10.0/Amazon.Lambda.ApplicationLoadBalancerEvents.dll": {
             "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.AspNetCoreServer/10.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "3.0.0",
+          "Amazon.Lambda.ApplicationLoadBalancerEvents": "3.0.0",
+          "Amazon.Lambda.Core": "3.1.0",
+          "Amazon.Lambda.Logging.AspNetCore": "5.0.0",
+          "Amazon.Lambda.Serialization.SystemTextJson": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "Amazon.Lambda.AspNetCoreServer.Hosting/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.APIGatewayEvents": "3.0.0",
+          "Amazon.Lambda.AspNetCoreServer": "10.1.1",
+          "Amazon.Lambda.Core": "3.1.0",
+          "Amazon.Lambda.RuntimeSupport": "2.1.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.AspNetCoreServer.Hosting.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Core/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Logging.AspNetCore/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Logging.AspNetCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.RuntimeSupport/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.1.0",
+          "SnapshotRestore.Registry": "1.0.2"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.RuntimeSupport.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.RuntimeSupport.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Amazon.Lambda.Serialization.SystemTextJson/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "3.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Amazon.Lambda.Serialization.SystemTextJson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AWSSDK.Core/4.0.7.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AWSSDK.DynamoDBv2/4.0.18.4": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.7.1, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.DynamoDBv2.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.DynamoDBv2.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.OpenApi": "2.0.0"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "build/Microsoft.AspNetCore.OpenApi.targets": {}
+        }
+      },
+      "Microsoft.OpenApi/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "related": ".pdb;.xml"
           }
         }
       },
@@ -229,28 +437,6 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "SharpCompress/0.30.1": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/SharpCompress.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/SharpCompress.dll": {}
-        }
-      },
-      "Snappier/1.3.1": {
-        "type": "package",
-        "compile": {
-          "lib/net8.0/Snappier.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net8.0/Snappier.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "SnapshotRestore.Registry/1.0.2": {
         "type": "package",
         "compile": {
@@ -262,15 +448,6 @@
           "lib/net10.0/SnapshotRestore.Registry.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "ZstdSharp.Port/0.7.3": {
-        "type": "package",
-        "compile": {
-          "lib/net7.0/ZstdSharp.dll": {}
-        },
-        "runtime": {
-          "lib/net7.0/ZstdSharp.dll": {}
         }
       }
     }
@@ -406,28 +583,51 @@
         "lib/net8.0/Amazon.Lambda.Serialization.SystemTextJson.xml"
       ]
     },
-    "DnsClient/1.6.1": {
-      "sha512": "4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
+    "AWSSDK.Core/4.0.7.1": {
+      "sha512": "XA0GHLwEMkoVu3u8neKnLEDD9ViXpn26ie9UhKXZXYRzCRfSFrLWpBOhupWlf+cJEFBYCC5mx2NsN8h59Y+M2Q==",
       "type": "package",
-      "path": "dnsclient/1.6.1",
+      "path": "awssdk.core/4.0.7.1",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "dnsclient.1.6.1.nupkg.sha512",
-        "dnsclient.nuspec",
-        "icon.png",
-        "lib/net45/DnsClient.dll",
-        "lib/net45/DnsClient.xml",
-        "lib/net471/DnsClient.dll",
-        "lib/net471/DnsClient.xml",
-        "lib/net5.0/DnsClient.dll",
-        "lib/net5.0/DnsClient.xml",
-        "lib/netstandard1.3/DnsClient.dll",
-        "lib/netstandard1.3/DnsClient.xml",
-        "lib/netstandard2.0/DnsClient.dll",
-        "lib/netstandard2.0/DnsClient.xml",
-        "lib/netstandard2.1/DnsClient.dll",
-        "lib/netstandard2.1/DnsClient.xml"
+        "awssdk.core.4.0.7.1.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.DynamoDBv2/4.0.18.4": {
+      "sha512": "xlYcMTvfAtGsUeIt924w0Za4voEIYGUtOzu9nA4Ce72D4eOpCJemgJ40lK7pa5LtF7ULIN1zIRHJ1a9qKwTNrA==",
+      "type": "package",
+      "path": "awssdk.dynamodbv2/4.0.18.4",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.DynamoDBv2.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.dynamodbv2.4.0.18.4.nupkg.sha512",
+        "awssdk.dynamodbv2.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.DynamoDBv2.dll",
+        "lib/net472/AWSSDK.DynamoDBv2.xml",
+        "lib/net8.0/AWSSDK.DynamoDBv2.dll",
+        "lib/net8.0/AWSSDK.DynamoDBv2.xml",
+        "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.dll",
+        "lib/netcoreapp3.1/AWSSDK.DynamoDBv2.xml",
+        "lib/netstandard2.0/AWSSDK.DynamoDBv2.dll",
+        "lib/netstandard2.0/AWSSDK.DynamoDBv2.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/10.0.7": {
@@ -466,44 +666,6 @@
         "microsoft.openapi.nuspec"
       ]
     },
-    "MongoDB.Bson/3.8.1": {
-      "sha512": "b4jm2QxBQcB3zBBM+l0Jdjmn8TYBB+J0QDNaJypkmR1qDC6v5w8IMeYaFPvn/kqo0PvCUGVSQkXm0nVCBjjNYg==",
-      "type": "package",
-      "path": "mongodb.bson/3.8.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net472/MongoDB.Bson.dll",
-        "lib/net472/MongoDB.Bson.xml",
-        "lib/net6.0/MongoDB.Bson.dll",
-        "lib/net6.0/MongoDB.Bson.xml",
-        "lib/netstandard2.1/MongoDB.Bson.dll",
-        "lib/netstandard2.1/MongoDB.Bson.xml",
-        "mongodb.bson.3.8.1.nupkg.sha512",
-        "mongodb.bson.nuspec",
-        "packageIcon.png"
-      ]
-    },
-    "MongoDB.Driver/3.8.1": {
-      "sha512": "UgmjqgJdxiiiDedoYZBBcYKjblS4I8RvxIF5rZmDQN97xAhRVolN5q70LzkamKwbrDLt944+24eD3uL96A6Ozg==",
-      "type": "package",
-      "path": "mongodb.driver/3.8.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net472/MongoDB.Driver.dll",
-        "lib/net472/MongoDB.Driver.xml",
-        "lib/net6.0/MongoDB.Driver.dll",
-        "lib/net6.0/MongoDB.Driver.xml",
-        "lib/netstandard2.1/MongoDB.Driver.dll",
-        "lib/netstandard2.1/MongoDB.Driver.xml",
-        "mongodb.driver.3.8.1.nupkg.sha512",
-        "mongodb.driver.nuspec",
-        "packageIcon.png"
-      ]
-    },
     "Scalar.AspNetCore/2.14.11": {
       "sha512": "EthfC0++GjWX5JB84OUTsNlzRMr8v6zGinx8i2msKWitAkvGbvjBz7ET9XoUis4Z3M+iH6jIJ66uUGzZqmrSGg==",
       "type": "package",
@@ -523,41 +685,6 @@
         "scalar.aspnetcore.nuspec"
       ]
     },
-    "SharpCompress/0.30.1": {
-      "sha512": "XqD4TpfyYGa7QTPzaGlMVbcecKnXy4YmYLDWrU+JIj7IuRNl7DH2END+Ll7ekWIY8o3dAMWLFDE1xdhfIWD1nw==",
-      "type": "package",
-      "path": "sharpcompress/0.30.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/SharpCompress.dll",
-        "lib/net5.0/SharpCompress.dll",
-        "lib/netcoreapp3.1/SharpCompress.dll",
-        "lib/netstandard2.0/SharpCompress.dll",
-        "lib/netstandard2.1/SharpCompress.dll",
-        "sharpcompress.0.30.1.nupkg.sha512",
-        "sharpcompress.nuspec"
-      ]
-    },
-    "Snappier/1.3.1": {
-      "sha512": "DOdDQiO8YZ5rBtVLY+6CmR1yp9WYoJRgEEktPBrR0tEj9QO2djA/zv0O3DX0OZpEAfosbY8pytQ9tQUogwQsEA==",
-      "type": "package",
-      "path": "snappier/1.3.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.png",
-        "lib/net472/Snappier.dll",
-        "lib/net472/Snappier.xml",
-        "lib/net8.0/Snappier.dll",
-        "lib/net8.0/Snappier.xml",
-        "lib/netstandard2.0/Snappier.dll",
-        "lib/netstandard2.0/Snappier.xml",
-        "snappier.1.3.1.nupkg.sha512",
-        "snappier.nuspec"
-      ]
-    },
     "SnapshotRestore.Registry/1.0.2": {
       "sha512": "clcAZGAb8sbtIuynOPiZkpHLdSb3RGxHJjSPyecgRh55fFY0KynqA7GEtrVL/sAUgO9jvC0IMhPXBRcJuFWrAA==",
       "type": "package",
@@ -575,31 +702,13 @@
         "snapshotrestore.registry.1.0.2.nupkg.sha512",
         "snapshotrestore.registry.nuspec"
       ]
-    },
-    "ZstdSharp.Port/0.7.3": {
-      "sha512": "U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
-      "type": "package",
-      "path": "zstdsharp.port/0.7.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/ZstdSharp.dll",
-        "lib/net5.0/ZstdSharp.dll",
-        "lib/net6.0/ZstdSharp.dll",
-        "lib/net7.0/ZstdSharp.dll",
-        "lib/netcoreapp3.1/ZstdSharp.dll",
-        "lib/netstandard2.0/ZstdSharp.dll",
-        "lib/netstandard2.1/ZstdSharp.dll",
-        "zstdsharp.port.0.7.3.nupkg.sha512",
-        "zstdsharp.port.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "AWSSDK.DynamoDBv2 >= 4.0.18.4",
       "Amazon.Lambda.AspNetCoreServer.Hosting >= 2.1.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.7",
-      "MongoDB.Driver >= 3.8.1",
       "Scalar.AspNetCore >= 2.14.11"
     ]
   },
@@ -646,6 +755,10 @@
       "net10.0": {
         "targetAlias": "net10.0",
         "dependencies": {
+          "AWSSDK.DynamoDBv2": {
+            "target": "Package",
+            "version": "[4.0.18.4, )"
+          },
           "Amazon.Lambda.AspNetCoreServer.Hosting": {
             "target": "Package",
             "version": "[2.1.0, )"
@@ -653,10 +766,6 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[10.0.7, )"
-          },
-          "MongoDB.Driver": {
-            "target": "Package",
-            "version": "[3.8.1, )"
           },
           "Scalar.AspNetCore": {
             "target": "Package",
@@ -674,6 +783,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[10.0.7, 10.0.7]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1098,18 +1213,11 @@
           "System.Xml.XPath.XDocument": "(,5.0.32767]"
         }
       }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1902",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'SharpCompress' 0.30.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-6c8g-7p36-r338",
-      "libraryId": "SharpCompress",
-      "targetGraphs": [
-        "net10.0"
-      ]
-    }
-  ]
+  }
 }
