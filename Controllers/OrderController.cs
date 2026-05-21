@@ -50,5 +50,12 @@ namespace changarroAPI.Controllers
             await _orderService.DeleteOrderAsync(id);
             return NoContent();
         }
+
+        [HttpGet("usuario/{username}")]
+        public async Task<ActionResult<List<Models.Orden>>> GetOrdersByUser(string username)
+        {
+            var orders = await _orderService.GetOrdersByUserAsync(username);
+            return Ok(orders);
+        }
     }
 }

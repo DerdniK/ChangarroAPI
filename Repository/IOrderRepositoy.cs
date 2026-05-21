@@ -7,5 +7,6 @@ namespace changarroAPI.Repository
         Task CreateOrderAsync(Models.Orden orden);
         Task UpdateOrderAsync(Models.Orden orden);
         Task DeleteOrderAsync(string id);
+        Task<List<Models.Orden>> GetOrdersByUserAsync(string username);
     }
 }

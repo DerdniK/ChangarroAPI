@@ -8,6 +8,9 @@ namespace changarroAPI.Models
     {
         [DynamoDBHashKey("id")]
         public string? Id { get; set; }
+        
+        [DynamoDBProperty("usuarioId")]
+        public string? UsuarioId { get; set; }
 
         // Mapeo exacto a lo que envía/recibe el JavaScript
         [DynamoDBProperty("cliente")]

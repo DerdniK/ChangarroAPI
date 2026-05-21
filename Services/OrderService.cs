@@ -36,5 +36,10 @@ namespace changarroAPI.Services
         {
             await _orderRepository.DeleteOrderAsync(id);
         }
+
+        public async Task<List<Models.Orden>> GetOrdersByUserAsync(string username)
+        {
+            return await _orderRepository.GetOrdersByUserAsync(username);
+        }
     }
 }

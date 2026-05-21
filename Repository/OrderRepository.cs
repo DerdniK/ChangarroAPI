@@ -44,5 +44,15 @@ namespace changarroAPI.Repository
             using var context = new DynamoDBContext(_dynamoClient);
             await context.DeleteAsync<Models.Orden>(id);
         }
+
+        public async Task<List<Models.Orden>> GetOrdersByUserAsync(string username)
+        {
+            using var context = new DynamoDBContext(_dynamoClient);
+            var conditions = new List<ScanCondition>
+            {
+                new ScanCondition("UsuarioId", Amazon.DynamoDBv2.DocumentModel.ScanOperator.Equal, username)
+            };
+            return await context.ScanAsync<Models.Orden>(conditions).GetRemainingAsync();
+        }
     }
 }
